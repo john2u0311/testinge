@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { fabric } from 'fabric';
+const fabric = require('fabric').fabric;
 
 const Workspace = () => {
   const canvasRef = useRef(null);
