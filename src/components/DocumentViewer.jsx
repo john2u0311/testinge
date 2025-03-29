@@ -11,7 +11,7 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 import HighlightIcon from '@mui/icons-material/Highlight';
 import NoteAddIcon from '@mui/icons-material/NoteAdd';
 
-const DocumentViewer = ({ setLoading, setAnnotations }) => {
+const DocumentViewer = ({ setLoading, onAnnotationUpdate }) => {
   const [pdfFile, setPdfFile] = useState(null);
   const [highlights, setHighlights] = useState([]);
   const [annotations, setAnnotations] = useState([]);
@@ -62,7 +62,9 @@ const DocumentViewer = ({ setLoading, setAnnotations }) => {
   const handleTextSelection = (e) => {
     setSelectedText(e.selectedText);
   };
-
+  
+  // Update any code that was using setAnnotations prop to use onAnnotationUpdate instead
+  
   return (
     <div className="document-viewer">
       <div className="toolbar">
